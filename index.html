@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tohirova Ullibika | Grand Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        * { cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), auto !important; }
+        body { background-color: #030305; color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .cinzel { font-family: 'Cinzel', serif; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        
+        /* OY EFFEKTI */
+        .moon {
+            position: absolute; top: 10%; right: 5%; width: 140px; height: 140px;
+            background: radial-gradient(circle at 30% 30%, #fff, #888);
+            border-radius: 50%; box-shadow: 0 0 60px rgba(255,255,255,0.2);
+            animation: moonFloat 8s ease-in-out infinite; z-index: 1;
+        }
+        @keyframes moonFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+
+        /* GRADIENT MATN */
+        .gradient-text { background: linear-gradient(90deg, #ff4500, #ffffff, #ff4500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* BACKGROUND DRAGON */
+        .bg-dragon-text {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 35vw; opacity: 0.03; z-index: -1; font-weight: 900; pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-dragon-text cinzel">DRAGON</div>
+
+    <nav class="fixed w-full z-50 p-6 glass flex justify-between items-center">
+        <div class="text-2xl font-black cinzel tracking-widest text-orange-600">ULLIBIKA</div>
+        <div class="space-x-8 text-[10px] font-bold uppercase tracking-[0.3em] hidden md:flex">
+            <a href="#home" class="hover:text-orange-500 transition">Bosh sahifa</a>
+            <a href="#about" class="hover:text-orange-500 transition">Haqida</a>
+            <a href="#skills" class="hover:text-orange-500 transition">Manbalar</a>
+            <a href="#projects" class="hover:text-orange-500 transition">Loyihalar</a>
+            <a href="#contact" class="hover:text-orange-500 transition">Aloqa</a>
+        </div>
+       <a href="mailto:xamroabdullaev402@gmail.com" class="px-6 py-2 bg-orange-600 text-white text-xs font-bold rounded-full hover:bg-white hover:text-black transition">
+  BOG'LANISH
+</a>
+    </nav>
+
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center relative px-4 overflow-hidden">
+        <div class="moon"></div>
+        <div class="absolute w-[500px] h-[500px] bg-orange-600/10 blur-[120px] rounded-full -z-10"></div>
+        
+        <h1 class="text-7xl md:text-[10rem] font-black leading-none cinzel mb-6 animate-pulse">
+            TOHIROVA<br><span class="gradient-text">ULLIBIKA</span>
+        </h1>
+        <p class="max-w-2xl text-gray-400 text-lg md:text-xl font-light tracking-[0.5em] uppercase">
+            Digital Architect • Dragon Soul • Lunar Vision
+        </p>
+        <div class="mt-20 animate-bounce flex flex-col items-center">
+            <span class="text-[10px] tracking-[0.3em] text-gray-500 uppercase">Pastga tushiring</span>
+            <div class="w-px h-12 bg-gradient-to-b from-orange-600 to-transparent mt-4"></div>
+        </div>
+    </section>
+
+    <section class="py-20 grid grid-cols-2 md:grid-cols-4 gap-6 px-6 max-w-7xl mx-auto">
+        <div class="glass p-12 rounded-3xl text-center group hover:border-orange-600 transition">
+            <h2 class="text-5xl font-black cinzel mb-2 group-hover:scale-110 transition">50+</h2>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Bajarilgan loyihalar</p>
+        </div>
+        <div class="glass p-12 rounded-3xl text-center group hover:border-orange-600 transition">
+            <h2 class="text-5xl font-black cinzel mb-2 group-hover:scale-110 transition">15+</h2>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Global Mijozlar</p>
+        </div>
+        <div class="glass p-12 rounded-3xl text-center group hover:border-orange-600 transition">
+            <h2 class="text-5xl font-black cinzel mb-2 group-hover:scale-110 transition">100%</h2>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Sifat Kafolati</p>
+        </div>
+        <div class="glass p-12 rounded-3xl text-center group hover:border-orange-600 transition">
+            <h2 class="text-5xl font-black cinzel mb-2 group-hover:scale-110 transition">3+</h2>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Yillik Tajriba</p>
+        </div>
+    </section>
+<section id="about" class="py-32 px-6 max-w-6xl mx-auto">
+
+<div class="grid md:grid-cols-2 gap-20 items-center">
+
+<div class="relative">
+
+<div class="absolute -top-10 -left-10 text-[15rem] cinzel opacity-10 pointer-events-none">
+U
+</div>
+
+<div class="glass aspect-[4/5] rounded-3xl overflow-hidden relative z-10">
+
+<img src="men.jpg" class="w-full h-full object-cover">
+
+</div>
+
+</div>
+
+
+<div class="space-y-8">
+
+<h2 class="text-5xl font-black cinzel border-l-8 border-orange-600 pl-6">
+MEN HAQIMDA
+</h2>
+
+<p class="text-xl text-gray-400 leading-relaxed font-light">
+Men <span class="text-white font-bold">Tohirova Ullibika</span>,
+IT sohasiga qiziqadigan yosh dasturchiman. Yangi texnologiyalarni
+o‘rganish va turli loyihalar yaratishni yaxshi ko‘raman.
+</p>
+
+<p class="text-gray-400 leading-relaxed font-light">
+Maqsadim kelajakda kuchli dasturchi bo‘lish va o‘z loyihalarim
+orqali insonlarga foydali mahsulotlar yaratish.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+    <section id="skills" class="py-32 bg-zinc-950/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black cinzel mb-20 text-center tracking-[0.5em]">Yordamchi Manbalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-[40px] hover:bg-orange-600/5 transition group">
+                    <h3 class="text-2xl font-bold cinzel mb-4">UI/UX DESIGN</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Figma, Adobe Suite va prototiplash bo'yicha eng yuqori darajadagi ko'nikmalar.</p>
+                    <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-orange-600 w-[95%]"></div>
+                    </div>
+                </div>
+                <div class="glass p-10 rounded-[40px] hover:bg-orange-600/5 transition group">
+                    <h3 class="text-2xl font-bold cinzel mb-4">DEVELOPMENT</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Next.js, Tailwind CSS va yuqori samaradorlikka ega kodlash arxitekturasi.</p>
+                    <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-orange-600 w-[85%]"></div>
+                    </div>
+                </div>
+                <div class="glass p-10 rounded-[40px] hover:bg-orange-600/5 transition group">
+                    <h3 class="text-2xl font-bold cinzel mb-4">BRANDING</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Brend strategiyasi, logotip dizayni va vizual identifikatsiya yaratish.</p>
+                    <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-orange-600 w-[90%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-32 px-6 max-w-5xl mx-auto">
+        <h2 class="text-5xl font-black cinzel mb-24 text-center">MENING LOYIHALARIM</h2>
+        <div class="space-y-32">
+            <div class="relative pl-12 border-l-2 border-orange-600/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-orange-600 rounded-full shadow-[0_0_20px_#ff4500]"></div>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="flex-1 glass aspect-video rounded-3xl overflow-hidden flex items-center justify-center text-orange-900 font-black text-6xl italic">harakatlanuvchi hayvon</div>
+                    <div class="flex-1">
+                        <span class="text-orange-600 font-bold tracking-widest text-xs uppercase">2024 • Boshqaruv Tizimi</span>
+                        <h3 class="text-4xl font-bold cinzel mt-4 mb-6">Project: harakatlanuvchi hayvon</h3>
+                        <p class="text-gray-400 font-light text-lg mb-8 italic">Ushbu loyiha yirik korporatsiya uchun yaratilgan bo'lib, barcha ma'lumotlarni bitta vizual markazga jamlaydi. Xuddi ajdahoning o'tkir nigohi kabi.</p>
+                        <button class="text-white border-b border-orange-600 pb-2 hover:text-orange-600 transition"><a href="ajderho.html" class="text-white border-b border-orange-600 pb-2 hover:text-orange-600 transition">
+Case Study →
+</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="relative pl-12 border-l-2 border-orange-600/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-orange-600 rounded-full shadow-[0_0_20px_#ff4500]"></div>
+                <div class="flex flex-col md:flex-row-reverse gap-10">
+                    <div class="flex-1 glass aspect-video rounded-3xl overflow-hidden flex items-center justify-center text-blue-900 font-black text-6xl italic">Digital Soul</div>
+                    <div class="flex-1">
+                        <span class="text-orange-600 font-bold tracking-widest text-xs uppercase">2023 • Mobil Ilova</span>
+                        <h3 class="text-4xl font-bold cinzel mt-4 mb-6">Project: Digital Soul</h3>
+                        <p class="text-gray-400 font-light text-lg mb-8 italic">Tungi uyquni yaxshilovchi va meditatsiya qiluvchi foydalanuvchilar uchun maxsus platforma. Oy nuri kabi sokin dizayn.</p>
+                        <button class="text-white border-b border-orange-600 pb-2 hover:text-orange-600 transition"><a href="DigitalSoul.html" class="text-white border-b border-orange-600 pb-2 hover:text-orange-600 transition">
+Case Study →
+</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-40 glass relative overflow-hidden text-center px-6">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-600 to-transparent"></div>
+        
+        <h2 class="text-5xl md:text-8xl font-black cinzel mb-16">LOYIHA BOSHLAYMIZMI?</h2>
+        
+        <div class="flex flex-wrap justify-center gap-12 text-sm font-bold tracking-[0.4em] uppercase mb-20">
+            <a href="https://t.me/iastella_pg_o1" class="hover:text-orange-600 transition">Telegram</a>
+            <a href="https://www.instagram.com/iastella_pg_o1/" class="hover:text-orange-600 transition">Instagram</a>
+            
+            <a href="https://github.com/Tohirova11" class="hover:text-orange-600 transition">GitHup</a>
+        </div>
+
+        
+
+        <div class="mt-40 opacity-20 text-[10px] tracking-[1em] uppercase">
+            Designed with Dragon Spirit by Tohirova Ullibika © 2026
+        </div>
+    </footer>
+
+</body>
+</html>
