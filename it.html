@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iT.yoshlar.uz | Ultra Premium Fix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --accent: #10b981;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.07);
+            --text: #f8fafc;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        body, html { height: 100%; width: 100%; overflow: hidden; background: var(--bg); color: var(--text); }
+
+        .gradient-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1e293b, transparent),
+                        radial-gradient(circle at 0% 100%, #064e3b, transparent);
+            z-index: -1;
+        }
+
+        .container { height: 100%; display: flex; flex-direction: column; padding: 30px 20px; }
+
+        header { text-align: center; margin-bottom: 40px; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; color: var(--text); opacity: 0.9; }
+        .logo span { color: var(--accent); }
+
+        .progress { display: flex; gap: 8px; justify-content: center; margin-top: 15px; }
+        .dot { height: 5px; width: 12px; background: rgba(255,255,255,0.1); border-radius: 10px; transition: 0.5s; }
+        .dot.active { width: 35px; background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+
+        .screen { display: none; flex-direction: column; height: 100%; animation: reveal 0.7s cubic-bezier(0.19, 1, 0.22, 1); }
+        .screen.active { display: flex; }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(30px) scale(0.96); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+
+        .scroll-view { flex: 1; overflow-y: auto; padding-top: 10px; padding-bottom: 50px; }
+        ::-webkit-scrollbar { width: 0; }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            border-radius: 24px; padding: 20px; margin-bottom: 16px;
+            transition: 0.3s; cursor: pointer;
+        }
+        .card:active { transform: translateY(-3px); border-color: var(--accent); background: rgba(16, 185, 129, 0.05); }
+
+        .id-input {
+            width: 100%; background: transparent; border: none; border-bottom: 2px solid var(--border);
+            color: var(--accent); font-size: 48px; font-weight: 800; text-align: center;
+            outline: none; padding: 20px 0; margin-top: 50px;
+        }
+
+        .lesson-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 22px; background: var(--glass); border-radius: 20px;
+            margin-bottom: 12px; border: 1px solid var(--border); transition: 0.3s;
+        }
+        .lesson-item:active { background: rgba(255,255,255,0.1); border-color: var(--accent); }
+
+        .btn {
+            background: var(--accent); color: #000; padding: 22px; border-radius: 22px;
+            text-align: center; font-weight: 700; text-transform: uppercase;
+            cursor: pointer; margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gradient-bg"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">it.yoshlar<span>.uz</span></div>
+            <div class="progress"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </header>
+
+
+        <div id="s1" class="screen active">
+            <h2 style="font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Markazni tanlang</h2>
+            <div class="scroll-view">
+                <div class="card" onclick="next('s2', 2)"><h3>Xiva</h3><p>Markaziy IT-Laboratoriya</p></div>
+                <div class="card" onclick="next('s2', 2)"><h3>Urganch</h3><p>Texnopark Filiali</p></div>
+            </div>
+        </div>
+
+        <div id="s2" class="screen">
+            <h2 style="font-size: 14px; color: var(--accent); text-transform: uppercase; margin-bottom: 20px;">Mentorlar</h2>
+            <div class="scroll-view" id="mentor-box"></div>
+        </div>
+
+        <div id="s3" class="screen">
+            <h2 id="m-title" style="font-size: 22px; margin-bottom: 20px; color: var(--accent);"></h2>
+            <div class="scroll-view" id="student-box"></div>
+        </div>
+
+        <div id="s4" class="screen" style="justify-content: center; text-align: center;">
+            <h1 id="st-title" style="font-size: 32px;"></h1>
+            <input type="number" class="id-input" placeholder="000000" oninput="verify(this)">
+            <p style="color: #64748b; margin-top: 20px;">6 xonali ID kiriting</p>
+        </div>
+
+        <div id="s5" class="screen">
+            <h2 style="font-size: 14px; color: var(--accent); text-transform: uppercase; margin-bottom: 20px;">Mavzular</h2>
+            <div class="scroll-view" id="lesson-box"></div>
+        </div>
+
+        <div id="s6" class="screen">
+            <div class="scroll-view" id="content-box"></div>
+            <div class="btn" onclick="location.reload()">Tugatish</div>
+        </div>
+    </div>
+
+    <script>
+        const appData = {
+            mentors: [
+                { id: "M1", n: "Baltayev.R", d: "Frontend", s: ["Mo'minjon Xusinov", "Ullibika Toxirova"] },
+                { id: "M2", n: "Sapaev.M", d: "Backend", s: ["Abdumalik Atajanov", "Asqarbek Abdusharipov"] }
+            ],
+            lessons: [
+                { cat: "Frontend", t: "React Virtual DOM", c: "<h3>Virtual DOM</h3><p>React faqat o'zgargan qismlarni yangilaydi. Bu samaradorlikni oshiradi.</p>" },
+                { cat: "Backend", t: "Node.js Webhooks", c: "<h3>Webhooks</h3><p>Server real vaqt rejimida botga ma'lumot yuborish usuli.</p>" }
+            ]
+        };
+
+        let selectedM = null;
+
+        window.onload = () => {
+            const box = document.getElementById('mentor-box');
+            appData.mentors.forEach(m => {
+                box.innerHTML += `<div class="card" onclick="selM('${m.id}')"><h3>${m.n}</h3><p>${m.d}</p></div>`;
+            });
+        };
+
+        function next(id, step) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i < step));
+        }
+
+        function selM(id) {
+            selectedM = appData.mentors.find(x => x.id === id);
+            document.getElementById('m-title').innerText = selectedM.n;
+            const box = document.getElementById('student-box');
+            box.innerHTML = "";
+            selectedM.s.forEach(s => {
+                box.innerHTML += `<div class="card" onclick="selS('${s}')"><h3>${s}</h3><p>Profilni ko'rish</p></div>`;
+            });
+            next('s3', 3);
+        }
+
+        function selS(name) {
+            document.getElementById('st-title').innerText = name;
+            next('s4', 4);
+        }
+
+
+        function verify(el) {
+            if(el.value.length === 6) {
+                const box = document.getElementById('lesson-box');
+                box.innerHTML = "";
+                // Darslarni yuklash va onclick hodisasini to'g'irlash
+                appData.lessons.forEach((l, index) => {
+                    if(l.cat === selectedM.d) {
+                        const div = document.createElement('div');
+                        div.className = 'lesson-item';
+                        div.innerHTML = `<div><div style="font-weight:600;">${l.t}</div><div style="font-size:12px;color:#64748b;">Mavjud</div></div><div style="color:var(--accent)">→</div>`;
+                        div.onclick = () => view(index); // Index orqali chaqiramiz
+                        box.appendChild(div);
+                    }
+                });
+                setTimeout(() => next('s5', 5), 400);
+            }
+        }
+
+        function view(index) {
+            const lesson = appData.lessons[index];
+            document.getElementById('content-box').innerHTML = `
+                <h1 style="color:var(--accent); font-size:28px; margin-bottom:20px;">${lesson.t}</h1>
+                <div class="card" style="line-height:1.8; color:#cbd5e1;">${lesson.c}</div>
+            `;
+            next('s6', 5);
+        }
+    </script>
+</body>
+</html>
